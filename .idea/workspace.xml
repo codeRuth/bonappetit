@@ -1,7 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0fd0e7e1-e918-4849-b879-fc2a011c714a" name="Default" comment="" />
+    <list default="true" id="0fd0e7e1-e918-4849-b879-fc2a011c714a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/assets/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/static/.gitkeep" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/bonAppetit.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bonAppetit.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/.babelrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/.editorconfig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/.eslintignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/.eslintrc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/.postcssrc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/build/build.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/build/check-versions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/build/dev-client.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/build/dev-server.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/build/utils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/build/vue-loader.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/build/webpack.base.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/build/webpack.dev.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/build/webpack.prod.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/build/webpack.test.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/config/dev.env.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/config/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/config/prod.env.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/config/test.env.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/package-lock.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/App.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/components/HelloWorld.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/components/Register.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/router/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/services/Api.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/services/AuthenticationService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/test/e2e/custom-assertions/elementCount.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/test/e2e/nightwatch.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/test/e2e/runner.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/test/e2e/specs/test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/test/unit/.eslintrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/test/unit/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/test/unit/karma.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/test/unit/specs/Hello.spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/.eslintrc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/package-lock.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/config/config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/controller/auth-controller.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/policies/auth-controller-policy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/routes.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -170,6 +228,7 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -323,12 +382,12 @@
       <workItem from="1509268965518" duration="8343000" />
       <workItem from="1509277338530" duration="3762000" />
       <workItem from="1509281406488" duration="459000" />
-      <workItem from="1509281883951" duration="6990000" />
+      <workItem from="1509281883951" duration="7107000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58843000" />
+    <option name="totallyTimeSpent" value="58960000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="48" y="-3" width="1319" height="772" extended-state="6" />
@@ -340,7 +399,7 @@
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19907407" sideWeight="0.57099235" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32519084" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
