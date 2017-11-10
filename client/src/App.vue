@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--<img src="./assets/logo.png">-->
     <router-view/>
   </div>
@@ -14,11 +15,8 @@
 <style>
   @import url('https://fonts.googleapis.com/css?family=Arvo|Dosis|Pontano+Sans');
   #app {
-    font-family: "Arvo", Helvetica, Arial, sans-serif;
+    font-family: "Dosis", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
   }
 </style>
