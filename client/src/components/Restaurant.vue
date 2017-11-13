@@ -1,38 +1,43 @@
 <template>
-  <div class="column">
-    <div class="card" v-for="item in items">
-    <div class="card-content">
-      <p class="title">
-        {{item.title}}
-      </p>
-      <p class="subtitle">
-        {{item.cuisine}}
-        {{item.rating}}
-      </p>
-    </div>
-    </div>
+  <div class="card">
+  <div class="card-image">
+    <figure class="image is-16by9">
+      <img v-bind:src="item.image" alt="Image Not Available">
+    </figure>
+  </div>
+  <div class="card-content">
+    <p class="title is-5">
+      {{item.name}}
+    </p>
+    <p class="subtitle is-6" style="padding-top: 3%">
+      {{item.cuisine}}
+    </p>
+  </div>
+  <footer class="card-footer">
+    <p class="card-footer-item">{{item.address}}</p>
+    <p class="card-footer-item">
+      <span class="icon icon is-small has-text-warning">
+        <i class="fa fa-star"></i>
+      </span>
+      {{item.rating}}</p>
+  </footer>
   </div>
 </template>
 
 <script>
   export default {
-    data () {
-      return {
-        items: [
-          { title: 'Polar Bear', cuisine: 'Ice Cream', rating: '4.2' },
-          { title: 'Rajadhani', cuisine: 'North Indian', rating: '4.1' },
-          { title: 'Meghana Biriyani', cuisine: 'Andhra', rating: '3.2' }
-        ]
-      }
-    }
+    props: [
+      'item'
+    ]
   }
 </script>
 
 <style scoped>
-  body, .section {
-    background-color: whitesmoke;
+  .card {
+    display:flex;
+    flex-direction: column;
   }
-  .features {
-    padding-top: 3%;
+  .cart-footer {
+    margin-top: auto;
   }
 </style>
