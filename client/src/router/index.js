@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
-import LoginSuccess from '@/components/LoginSuccess'
+import Home from '@/components/Home.vue'
+import LoginSuccess from '@/components/LoginSuccess.vue'
+import RestaurantGrid from '@/components/RestaurantGrid.vue'
+import SearchResults from '@/components/SearchResults.vue'
 
 Vue.use(Router)
 
@@ -16,6 +18,16 @@ export default new Router({
       path: '/login-success',
       name: 'LoginSuccess',
       component: LoginSuccess
+    },
+    {
+      path: '/restaurants',
+      name: 'RestaurantGrid',
+      component: RestaurantGrid
+    },
+    {
+      path: '/search',
+      name: 'SearchResults',
+      component: SearchResults
     }
   ]
 })

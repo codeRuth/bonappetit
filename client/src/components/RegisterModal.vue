@@ -1,13 +1,10 @@
 <template>
   <form action="">
     <div class="modal-card">
-
       <header class="modal-card-head">
         <p class="modal-card-title">Register with bonAppetit</p>
       </header>
-
       <section class="modal-card-body">
-
         <b-field>
           <b-input
             type="text"
@@ -16,7 +13,6 @@
             required>
           </b-input>
         </b-field>
-
         <b-field>
           <b-input
             type="email"
@@ -25,7 +21,6 @@
             required>
           </b-input>
         </b-field>
-
         <b-field>
           <b-input
             type="tel"
@@ -34,7 +29,6 @@
             required>
           </b-input>
         </b-field>
-
         <b-field>
           <b-input
             type="password"
@@ -44,7 +38,6 @@
             required>
           </b-input>
         </b-field>
-
         <b-field>
           <b-input
             type="text"
@@ -53,23 +46,19 @@
             required>
           </b-input>
         </b-field>
-
         <div class="field">
           <b-checkbox v-model="checkbox">
             I Accept all the Terms and Conditions
           </b-checkbox>
         </div>
-
         <button class="button is-primary is-fullwidth is-medium" v-on:click="register()">Register</button>
       </section>
-
       <footer class="modal-card-foot">
       <div>
         <h3 class="title is-5" style="padding-bottom: 10px">Already a member ?</h3>
         <h6 class="subtitle is-6">Login now and start tracking.</h6>
       </div>
       </footer>
-
     </div>
   </form>
 </template>

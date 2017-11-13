@@ -7,7 +7,6 @@
       </header>
 
       <section class="modal-card-body">
-
         <b-field>
           <b-input
             type="tel"
@@ -16,7 +15,6 @@
             required>
           </b-input>
         </b-field>
-
         <b-field>
           <b-input
             type="password"
@@ -26,7 +24,6 @@
             required>
           </b-input>
         </b-field>
-
         <button class="button is-primary is-fullwidth is-medium"  v-on:click="login()">Login</button>
       </section>
 
