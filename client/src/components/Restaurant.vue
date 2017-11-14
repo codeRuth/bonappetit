@@ -1,4 +1,5 @@
 <template>
+  <router-link :to="{ name: 'RestaurantDetail', params: { id: item.rest_id }}">
   <div class="card">
   <div class="card-image">
     <figure class="image is-16by9">
@@ -22,13 +23,32 @@
       {{item.rating}}</p>
   </footer>
   </div>
+  </router-link>
 </template>
 
 <script>
+  import RestaurantService from '@/services/RestaurantService'
   export default {
     props: [
       'item'
-    ]
+    ],
+    data () {
+      return {
+        term: ''
+      }
+    },
+    methods: {
+      async detail () {
+        try {
+          await RestaurantService.detail({
+            term: this.term
+          }).this.$router.forward()
+          // .then(this.$router.push('/login-success'))
+        } catch (error) {
+          this.error = error.data.error || error.data
+        }
+      }
+    }
   }
 </script>
 

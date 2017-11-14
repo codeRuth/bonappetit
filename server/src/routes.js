@@ -7,5 +7,5 @@ module.exports = (app) => {
   app.post('/login', auth.login)
   app.post('/search', restaurant.search)
   // app.get('/restaurants', restaurant.list)
-  app.get('/restaurant/:name')
+  app.get('/restaurant/:id', restaurant.detail)
 }

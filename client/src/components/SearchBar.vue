@@ -1,26 +1,26 @@
 <template>
   <div>
     <b-field class="search-field">
-          <b-input
-            placeholder="Type a Delivery Location, Restaurants, Cuisines, and Food."
-            type="search"
-            size="is-medium"
-            icon="search"
-            v-model="term">
-          </b-input>
-          <p class="control">
-            <router-link :to="{ path: 'search', query: { q: term }}">
-              <button class="button is-primary is-medium" v-on:click="search()">
-                <span style="font-size: 15px">Search</span>
-              </button>
-            </router-link>
-          </p>
-        </b-field>
+      <b-input
+        placeholder="Type a Delivery Location, Restaurants, Cuisines, and Food."
+        type="search"
+        size="is-medium"
+        icon="search"
+        v-model="term">
+      </b-input>
+      <p class="control">
+        <router-link :to="{ path: 'search', query: { q: term }}">
+          <button class="button is-primary is-medium" v-on:click="search()">
+            <span style="font-size: 15px">Search</span>
+          </button>
+        </router-link>
+      </p>
+    </b-field>
   </div>
 </template>
 
 <script>
-  import SearchService from '@/services/SearchService'
+  import SearchService from '@/services/RestaurantService'
   export default {
     data () {
       return {
@@ -32,7 +32,7 @@
         try {
           await SearchService.search({
             term: this.term
-          }).this.$router.forward()
+          })
           // .then(this.$router.push('/login-success'))
         } catch (error) {
           this.error = error.data.error || error.data

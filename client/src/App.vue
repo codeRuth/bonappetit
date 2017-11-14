@@ -13,7 +13,7 @@
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css?family=Arvo|Dosis|Pontano+Sans');
+  @import url('https://fonts.googleapis.com/css?family=Arvo|Dosis|Quicksand|Pontano+Sans');
   #app {
     font-family: "Dosis", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
