@@ -19,24 +19,50 @@
           <footer class="card-footer">
             <p class="card-footer-item">{{post[0].address}}</p>
             <p class="card-footer-item">
-              <span class="icon icon is-small has-text-warning"><i class="fa fa-star"></i></span>{{post[0].rating}}
+              <span class="icon icon is-small has-text-warning"><i class="mdi mdi-star"></i></span>{{post[0].rating}}
             </p>
           </footer>
         </div>
 
       </div>
       <div class="column is-one-half">
-        <div class="row" v-for="pos in post">
-          <div class="card">
-            <div class="card-content">
-              <div class="content">{{pos.item_name}} - {{pos.price}}</div>
-            </div>
-          </div>
-        </div>
+        <b-field position="is-left">
+        <b-select placeholder="Sort By">
+          <option value="price" selected>Price</option>
+          <option value="vegan">Vegan</option>
+        </b-select>
+      </b-field>
+        <b-table
+          :data="post"
+          :checked-rows.sync="checkedRows">
+
+          <template slot-scope="props">
+            <b-table-column>
+              <div v-if="props.row.vegan"><span class="icon has-text-success is-small"><i class="mdi mdi-circle"></i></span></div>
+              <div v-else><span class="icon has-text-danger is-small"><i class="mdi mdi-circle"></i></span></div>
+            </b-table-column>
+
+            <b-table-column label="Item Name">
+              {{ props.row.item_name }}
+            </b-table-column>
+
+            <b-table-column label="Quantity">
+              <span class="icon is-small del"><i class="mdi mdi-minus"></i></span>
+              <p class="quantity">{{props.row.quantity}}</p>
+              <span v-on:click="addItem(props.row)" class="icon is-small add"><i class="mdi mdi-plus"></i></span>
+            </b-table-column>
+            <b-table-column label="Price">
+              {{ props.row.price }}
+            </b-table-column>
+          </template>
+        </b-table>
+        <!--{{checkedRows}}-->
       </div>
-      <div class="column is-one-quarter">
-        <p>Hello World</p>
+
+      <div class="column is-one-third">
+        <cart :data="checkedRows"></cart>
       </div>
+
     </div>
 </div>
   </div>
@@ -45,15 +71,19 @@
 <script>
   import SearchService from '@/services/RestaurantService'
   import Header from '@/components/Header.vue'
+  import Cart from '@/components/Cart.vue'
   export default {
     components: {
-      'nav-bar': Header
+      'nav-bar': Header,
+      'cart': Cart
     },
     data () {
       return {
         loading: false,
         post: null,
-        error: null
+        error: null,
+        quantity: 0,
+        checkedRows: []
       }
     },
     created () {
@@ -70,6 +100,9 @@
         } catch (error) {
           this.error = error.data.error || error.data
         }
+      },
+      addItem (index) {
+        this.checkedRows.push(index)
       }
     }
   }
@@ -78,5 +111,15 @@
 <style scoped>
   .container {
     padding-top: 7%;
+  }
+
+  .add:hover, .del:hover {
+    cursor: pointer;
+  }
+  .quantity {
+    align-content: center;
+    display: inline;
+    padding-left: 3px;
+    padding-right: 3px;
   }
 </style>

@@ -5,7 +5,7 @@
       <section class="hero is-light">
         <div class="hero-body">
           <div class="container has-text-centered">
-            <h1 class="title is-1 is-spaced">Order from Restaurants near You.</h1>
+            <h1 class="title is-1" style="padding-bottom: 10px">Order from Restaurants near You.</h1>
             <h5 class="subtitle is-5">Start ordering by searching food by Location, Restaurant or Item itself.</h5>
           </div>
         </div>
@@ -18,7 +18,19 @@
           <div class="card">
             <div class="card-content">
               <p class="title">
-                “There are two hard things in ”
+                Customers
+              </p>
+              <p class="subtitle">
+                Customers use the above login button to Order.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="card-content">
+              <p class="title">
+                Restaurateurs
               </p>
               <p class="subtitle">
                 Jeff Atwood
@@ -30,19 +42,7 @@
           <div class="card">
             <div class="card-content">
               <p class="title">
-                “There are two hard ths.”
-              </p>
-              <p class="subtitle">
-                Jeff Atwood
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="column">
-          <div class="card">
-            <div class="card-content">
-              <p class="title">
-                “There are two har errors.”
+                Deliverer
               </p>
               <p class="subtitle">
                 Jeff Atwood

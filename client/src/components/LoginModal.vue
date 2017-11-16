@@ -54,9 +54,9 @@
           await AuthenticationService.login({
             number: this.number,
             password: this.password
-          }).then(this.$router.push('/login-success'))
+          })
         } catch (error) {
-          this.error = error.data.error || error.data
+          // this.error = error.data.error || error.data
         }
       }
     }

@@ -1,6 +1,14 @@
 const mysql = require('mysql')
 const config = require('../config/config')
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
+
+function jwtSignUser (user) {
+  const ONE_WEEK = 60 * 60 * 24 * 7
+  return jwt.sign(user, config.auth.jwtSecret, {
+    expiresIn: ONE_WEEK
+  })
+}
 
 const con = mysql.createConnection(config.db)
 con.connect()
@@ -26,7 +34,7 @@ module.exports = {
     )
   },
   login (req, res) {
-    con.query('SELECT password FROM USER WHERE phone = (?) ',
+    con.query('SELECT phone, password FROM USER WHERE phone = (?) ',
         [req.body.number],
         (error, results) => {
           if (error) {
@@ -35,12 +43,24 @@ module.exports = {
               error: 'User does not exist.'
             })
           } else {
-            if (bcrypt.compareSync(req.body.password, results[0].password)) {
-              console.log('Passwords match')
+            if (results.length === 0) {
+              res.status(200).send({
+                message: 'No User with Phone Number found'
+              })
             } else {
-              console.log('Passwords dont match')
+              console.log(results)
+              if (bcrypt.compareSync(req.body.password, results[0].password)) {
+                console.log(jwtSignUser(results[0].phone))
+                console.log(results)
+                res.status(200).send({
+                  message: 'Password Match'
+                })
+              } else {
+                res.status(200).send({
+                  message: 'Password Dont match'
+                })
+              }
             }
-            res.status(200).send(results)
           }
         })
   }
