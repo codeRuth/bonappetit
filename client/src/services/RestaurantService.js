@@ -5,9 +5,6 @@ export default {
   search (params) {
     return Api().post('/search', params)
   },
-  getrest (params) {
-    return Api().post('/search', params)
-  },
   detail (params) {
     return Api().get('/restaurant/' + params)
   }

@@ -34,7 +34,8 @@
       </b-field>
         <b-table
           :data="post"
-          :checked-rows.sync="checkedRows">
+          :checked-rows.sync="checkedRows"
+          checkable>
 
           <template slot-scope="props">
             <b-table-column>
@@ -46,14 +47,10 @@
               {{ props.row.item_name }}
             </b-table-column>
 
-            <b-table-column label="Quantity">
-              <span class="icon is-small del"><i class="mdi mdi-minus"></i></span>
-              <p class="quantity">{{props.row.quantity}}</p>
-              <span v-on:click="addItem(props.row)" class="icon is-small add"><i class="mdi mdi-plus"></i></span>
-            </b-table-column>
             <b-table-column label="Price">
               {{ props.row.price }}
             </b-table-column>
+
           </template>
         </b-table>
         <!--{{checkedRows}}-->
@@ -97,6 +94,7 @@
         try {
           let res = await SearchService.detail(this.$route.params.id)
           this.post = res.data
+          this.post.forEach(function (v) { v.quantity = 1 })
         } catch (error) {
           this.error = error.data.error || error.data
         }
@@ -113,9 +111,6 @@
     padding-top: 7%;
   }
 
-  .add:hover, .del:hover {
-    cursor: pointer;
-  }
   .quantity {
     align-content: center;
     display: inline;

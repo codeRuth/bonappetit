@@ -16,6 +16,11 @@
       <div class="columns">
         <div class="column">
           <div class="card">
+            <div class="card-image">
+              <figure class="image is-2by1">
+                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+              </figure>
+            </div>
             <div class="card-content">
               <p class="title">
                 Customers
@@ -28,6 +33,11 @@
         </div>
         <div class="column">
           <div class="card">
+            <div class="card-image">
+              <figure class="image is-2by1">
+                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+              </figure>
+            </div>
             <div class="card-content">
               <p class="title">
                 Restaurateurs
@@ -40,6 +50,11 @@
         </div>
         <div class="column">
           <div class="card">
+            <div class="card-image">
+              <figure class="image is-2by1">
+                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+              </figure>
+            </div>
             <div class="card-content">
               <p class="title">
                 Deliverer

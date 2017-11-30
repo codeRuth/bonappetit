@@ -37,7 +37,8 @@
     data () {
       return {
         isLoginModalActive: false,
-        isRegisterModalActive: false
+        isRegisterModalActive: false,
+        formProps: null
       }
     }
   }

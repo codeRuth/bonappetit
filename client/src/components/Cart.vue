@@ -1,17 +1,10 @@
 <template>
   <div class="card">
-  <header class="card-header">
-    <p class="card-header-title">
-      Cart
-    </p>
-    <a href="#" class="card-header-icon" aria-label="more options">
-      <span class="icon">
-        <i class="fa fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </a>
-  </header>
-  <div class="card-content">
-    <div class="content">
+    <header class="card-header">
+      <p class="card-header-title">Cart</p>
+      <a href="#" slot="trigger" class="card-header-icon" aria-label="more options"><span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
+    </header>
+    <div class="card-content">
       <b-table
         :data="data"
         :checked-rows.sync="checkedRows">
@@ -21,10 +14,16 @@
             {{ props.row.item_name }}
           </b-table-column>
 
-          <b-table-column label="Quantity">
-            <span class="icon is-small del"><i class="mdi mdi-minus"></i></span>
-            <div class="quantity">{{props.row.quantity}}</div>
-            <span v-on:click="addItem(props.row, ++quantity)" class="icon is-small add"><i class="mdi mdi-plus"></i></span>
+          <b-table-column label="Quantity" width="20" numeric>
+            <b-field label="">
+              <b-input min="1" type="number" v-model="props.row.quantity"></b-input>
+            </b-field>
+            <!--<b-field>-->
+              <!--<>-->
+              <!--<span v-on:click="quantity &#45;&#45;" class="icon is-small del"><i class="mdi mdi-minus"></i></span>-->
+              <!--<div v-model="quantity" class="quantity">{{props.row.quantity}}</div>-->
+              <!--<span v-on:click="row.quantity ++" class="icon is-small add"><i class="mdi mdi-plus"></i></span>-->
+            <!--</b-field>-->
           </b-table-column>
 
           <b-table-column label="Price">
@@ -33,36 +32,12 @@
 
         </template>
       </b-table>
-      <!--<table class="table is-narrow">-->
-        <!--<thead>-->
-        <!--<tr>-->
-          <!--<th>Item</th>-->
-          <!--<th>Quantity</th>-->
-          <!--<th>Price</th>-->
-        <!--</tr>-->
-        <!--</thead>-->
-        <!--<tbody>-->
-        <!--<tr>-->
-        <!--&lt;!&ndash;<tr v-for="pos in post">&ndash;&gt;-->
-          <!--<td>Crispy Honey Chilli Potato</td>-->
-          <!--<td>-->
-            <!--<span class="icon is-small"><i class="mdi mdi-minus"></i></span>-->
-            <!--{{qty}}-->
-            <!--<span class="icon is-small"><i class="mdi mdi-plus"></i></span>-->
-          <!--</td>-->
-          <!--<td>80</td>-->
-        <!--</tr>-->
-        <!--</tbody>-->
-      <!--</table>-->
-        <p class="billing" style="margin-bottom: 5px">Item Total : <span class="billing-amt">216.00</span></p>
-        <p class="billing" style="margin-bottom: 5px">GST : <span class="billing-amt">10.00</span></p>
-        <p class="billing">Delivery Charges : <span class="billing-amt">55.00</span></p>
+      <p class="billing">Cart Total : <span class="billing-amt">{{cartTotal}}</span></p>
     </div>
+    <footer class="card-footer">
+      <a v-on:click="confirmCustom()" class="card-footer-item is-primary">Checkout</a>
+    </footer>
   </div>
-  <footer class="card-footer">
-    <a v-on:click="" class="card-footer-item is-primary">Checkout</a>
-  </footer>
-</div>
 </template>
 
 <script>
@@ -75,19 +50,41 @@
       return {
         loading: false,
         post: null,
-        error: null
+        error: null,
+        initTotal: 0
       }
     },
+//    computed: {
+//      cartTotal: function () {
+//        this.data.forEach(function (value) {
+//          console.log(value)
+//        })
+//        return this.cartTotal
+//      }
+//    },
     methods: {
       async checkout () {
         try {
           let res = await OrderService.checkout({
-            cart: this.$route.query.q
+            cart: this.data
           })
-          this.post = res.data
+          console.log(res.data)
         } catch (error) {
           this.error = error.data.error || error.data
         }
+      },
+      confirmCustom () {
+        this.$dialog.confirm({
+          title: 'Place Order',
+          message: 'Are you sure you want to place the Order?, You can\'t change this.',
+          cancelText: 'Cancel',
+          confirmText: 'Order',
+          type: 'is-success',
+          onConfirm: () => {
+            this.$router.push({ name: 'OrderDetail' })
+            // this.$toast.open('User agreed')
+          }
+        })
       }
     }
   }
@@ -95,12 +92,16 @@
 
 <style scoped>
   .billing {
-    margin-bottom: 2px;
+    margin-top: 10px;
     font-weight: bold;
   }
+
   .billing-amt {
     float: right;
     font-weight: normal;
   }
-
+  .quantity {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 </style>
