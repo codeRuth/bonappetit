@@ -5,23 +5,38 @@ const con = mysql.createConnection(config.db)
 con.connect()
 
 module.exports = {
-  order (req, res) {
-    // const cart_id = Math.floor(1000 + Math.random() * 9000);
-    // con.query('',
-    //     [req.body.q, req.body.q, req.body.q],
-    //     (error, results) => {
-    //       if (error) {
-    //         // console.log(error)
-    //         // console.log(results)
-    //         res.status(400).send('Rest not found')
-    //       } else {
-    //         // console.log(results)
-    //         res.status(200).send(results)
-    //       }
-    //     }
-    // )
+  order: function (req, res) {
+    con.query(('SET @orderTotal = 0; SET @gst = 0; SET @payableAmount = 0; CALL getPayAmount(@orderTotal, @gst, @payableAmount, ?); SELECT @orderTotal, @gst, @payableAmount;'),
+        [req.body.cartID],
+        (error, results) => {
+          if (error) {
+            console.log(error)
+            console.log(results)
+            res.status(400).send('ERROR')
+          } else {
+            console.log(results)
+            res.status(200).send(results)
+          }
+        }
+    )
   },
-  checkout (req, res) {
+  payment: function (req, res) {
+    const orderID = Math.floor(1000 + Math.random() * 9000)
+    con.query('INSERT INTO `ORDER` (`order_id`, `rest_id`, `cust_id`, `cart_id`, `total_amt`, `accepted`, `cooked`, `delivered`, `paid`) VALUES (?, \'115\', \'19\', \'7776\', \'1200\', \'0\', \'0\', \'0\', \'0\');',
+        [orderID],
+        (error, results) => {
+          if (error) {
+            console.log(error)
+            console.log(results)
+            res.status(400).send('ERROR')
+          } else {
+            console.log(results)
+            res.status(200).send(results)
+          }
+        }
+    )
+  },
+  checkout: function (req, res) {
     const data = req.body.cart
     const values = []
     const cartID = Math.floor(1000 + Math.random() * 9000)
@@ -29,7 +44,6 @@ module.exports = {
     for (let i = 0; i < data.length; i++) {
       values.push([cartID, data[i].item_id, data[i].quantity])
     }
-
     con.beginTransaction(function (err) {
       if (err) { throw err }
       con.query('INSERT INTO `CART_INDEX` (`cart_id`, `user_id`) VALUES (?, ?)', [cartID, 19], function (error, results, fields) {
@@ -46,7 +60,7 @@ module.exports = {
             if (err) {
               res.status(400).send('ERROR')
               return con.rollback(function () { throw err })
-            } else { res.status(200).send(results) }
+            } else { res.status(200).send({ 'cartID': cartID }) }
             console.log('success!')
           })
         })

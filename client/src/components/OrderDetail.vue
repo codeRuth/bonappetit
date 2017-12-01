@@ -9,34 +9,33 @@
           <div class="rows">
             <div class="row">
               <b-table
-            :data="isEmpty ? [] : tableDataSimple">
+            :data="isEmpty ? [] : tableData">
             <template slot-scope="props">
               <b-table-column label="Item Name" >
-                {{ props.row.first_name }}
+                {{ props.row.item_name }}
               </b-table-column>
 
               <b-table-column label="Quantity" centered>
-                {{ props.row.last_name }}
+                {{ props.row.quantity }}
               </b-table-column>
 
               <b-table-column label="">x</b-table-column>
 
               <b-table-column label="Price" centered>
-                {{ props.row.date }}
+                {{ props.row.price }}
               </b-table-column>
 
-
               <b-table-column label="Total Price" centered>
-                {{ props.row.gender }}
+                {{ props.row.total_price }}
               </b-table-column>
             </template>
           </b-table>
             </div>
             <div class="row" style="float: right; padding-top: 1%; text-align: right; margin-right: 10%">
-              <h6 class="title is-6" style="margin-bottom: 5px">Order Total :  &nbsp;400 </h6>
-              <p>GST(5%) : &nbsp;17 </p>
+              <h6 class="title is-6" style="margin-bottom: 5px">Order Total :  &nbsp;{{ paymentData[0]["@orderTotal"] }} </h6>
+              <p>GST (5%) : &nbsp;{{ paymentData[0]["@gst"] }} </p>
               <p style="margin-bottom: 5px">Delivery Charges : &nbsp;30 </p>
-              <h4 class="title is-4">Amount Payable : &nbsp;400 </h4>
+              <h4 class="title is-4">Amount Payable : &nbsp;{{ paymentData[0]["@payableAmount"] }}</h4>
             </div>
           </div>
         </div>
@@ -71,32 +70,36 @@
 </template>
 
 <script>
-  import SearchService from '@/services/RestaurantService'
+  import OrderService from '@/services/OrderService'
   import Header from '@/components/Header.vue'
-  import Cart from '@/components/Cart.vue'
   export default {
     components: {
-      'nav-bar': Header,
-      'cart': Cart
+      'nav-bar': Header
     },
     data () {
-      const tableDataSimple = [
-        { 'first_name': 'Gobi Manchurian', 'last_name': 1, 'date': '100', 'gender': '100' },
-        { 'first_name': 'Pasta De Italia', 'last_name': 4, 'date': '270', 'gender': '870' },
-        { 'first_name': 'Pepperoni Pizza', 'last_name': 2, 'date': '45', 'gender': '90' },
-        { 'first_name': 'Mosaranna', 'last_name': 1, 'date': '80', 'gender': '80' },
-        { 'first_name': 'Bow Bow Biriyani', 'last_name': 2, 'date': '12', 'gender': '24' }
-      ]
       return {
-        tableDataSimple,
+        paymentData: null,
+        tableData: null,
         radio: 'cod'
       }
     },
+    created () {
+      this.order()
+    },
     methods: {
-      async detail () {
+      async order () {
         try {
-          let res = await SearchService.detail(this.$route.params.id)
-          this.post = res.data
+          let res = await OrderService.order({ cartID: this.$route.params.cartID })
+          this.tableData = res.data['3'] || res.data[3]
+          this.paymentData = res.data['5'] || res.data[5]
+        } catch (error) {
+          this.error = error.data.error || error.data
+        }
+      },
+      async payment () {
+        try {
+          let res = await OrderService.payment()
+          console.log(res)
         } catch (error) {
           this.error = error.data.error || error.data
         }
@@ -109,8 +112,9 @@
           confirmText: 'Order',
           type: 'is-success',
           onConfirm: () => {
-            this.$router.push({ name: 'OrderDetail' })
-            // this.$toast.open('User agreed')
+            this.payment()
+            // this.$router.push({ name: 'OrderDetail' })
+            this.$toast.open('Order Placed')
           }
         })
       },
@@ -122,8 +126,9 @@
           confirmText: 'Order',
           type: 'is-success',
           onConfirm: () => {
-            this.$router.push({ name: 'OrderDetail' })
-            // this.$toast.open('User agreed')
+            this.payment()
+            // this.$router.push({ name: 'OrderDetail' })
+            this.$toast.open('Order Placed')
           }
         })
       }

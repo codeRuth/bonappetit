@@ -7,5 +7,8 @@ export default {
   },
   order (params) {
     return Api().post('/order', params)
+  },
+  payment (params) {
+    return Api().post('/payment', params)
   }
 }

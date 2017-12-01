@@ -65,10 +65,8 @@
     methods: {
       async checkout () {
         try {
-          let res = await OrderService.checkout({
-            cart: this.data
-          })
-          console.log(res.data)
+          let res = await OrderService.checkout({ cart: this.data })
+          this.$router.push({ name: 'OrderDetail', params: { 'cartID': res.data.cartID } })
         } catch (error) {
           this.error = error.data.error || error.data
         }
@@ -81,7 +79,7 @@
           confirmText: 'Order',
           type: 'is-success',
           onConfirm: () => {
-            this.$router.push({ name: 'OrderDetail' })
+            this.checkout()
             // this.$toast.open('User agreed')
           }
         })

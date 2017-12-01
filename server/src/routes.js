@@ -11,4 +11,5 @@ module.exports = (app) => {
   app.get('/restaurant/:id', restaurant.detail)
   app.post('/checkout', order.checkout)
   app.post('/order', order.order)
+  app.post('/payment', order.payment)
 }
