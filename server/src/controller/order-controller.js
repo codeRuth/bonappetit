@@ -21,9 +21,25 @@ module.exports = {
     )
   },
   payment: function (req, res) {
-    const orderID = Math.floor(1000 + Math.random() * 9000)
-    con.query('INSERT INTO `ORDER` (`order_id`, `rest_id`, `cust_id`, `cart_id`, `total_amt`, `accepted`, `cooked`, `delivered`, `paid`) VALUES (?, \'115\', \'19\', \'7776\', \'1200\', \'0\', \'0\', \'0\', \'0\');',
-        [orderID],
+    con.query(
+        'INSERT INTO `ORDER` (`rest_id`, `cust_id`, `cart_id`, `total_amt`, `accepted`, `cooked`, `delivered`, `paid`) ' +
+        'VALUES (?, ?, ?, ?, 0, 0, 0, ?);',
+        [req.body.rest_id, req.body.cust_id, req.body.cart_id, req.body.total_amt, req.body.paid],
+        (error, results) => {
+          if (error) {
+            console.log(error)
+            console.log(results)
+            res.status(400).send('ERROR')
+          } else {
+            console.log(results)
+            res.status(200).send(results)
+          }
+        }
+    )
+  },
+  orderDetail: function (req, res) {
+    con.query('SELECT RESTAURANT.name, order_id, cart_id, del_id, total_amt, accepted, cooked, delivered, paid FROM `ORDER`, `RESTAURANT` WHERE cust_id = ? AND RESTAURANT.rest_id = `ORDER`.rest_id;',
+        [req.body.user_id],
         (error, results) => {
           if (error) {
             console.log(error)

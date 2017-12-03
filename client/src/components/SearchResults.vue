@@ -4,15 +4,15 @@
   <div class="container">
     <!--<p>{{ $route.query.q }}</p>-->
     <section>
-    <h3 class="title is-3">Search Results for '{{$route.query.q}}'</h3>
-    <h5 class="subtitle is-5">101 Retaurants found</h5>
-    <div class="loading" v-if="loading">Loading...</div>
-    <div v-if="error" class="error">{{ error }}</div>
-    <div class="columns is-multiline is-half-mobile is-one-third-tablet is-one-quarter-desktop">
-      <div class="column is-one-quarter" v-for="pos in post">
-        <restaurant :item="pos"></restaurant>
+      <h3 class="title is-3">Search Results for '{{$route.query.q}}'</h3>
+      <h5 class="subtitle is-5">{{post.length}} Retaurants found</h5>
+      <div class="loading" v-if="loading">Loading...</div>
+      <div v-if="error" class="error">{{ error }}</div>
+      <div class="columns is-multiline is-half-mobile is-one-third-tablet is-one-quarter-desktop">
+        <div class="column is-one-quarter" v-for="pos in post">
+          <restaurant :item="pos"></restaurant>
+        </div>
       </div>
-    </div>
     </section>
   </div>
   </div>

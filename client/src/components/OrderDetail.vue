@@ -8,9 +8,8 @@
         <div class="column is-two-thirds">
           <div class="rows">
             <div class="row">
-              <b-table
-            :data="isEmpty ? [] : tableData">
-            <template slot-scope="props">
+              <b-table :data="isEmpty ? [] : tableData">
+                <template slot-scope="props">
               <b-table-column label="Item Name" >
                 {{ props.row.item_name }}
               </b-table-column>
@@ -29,7 +28,7 @@
                 {{ props.row.total_price }}
               </b-table-column>
             </template>
-          </b-table>
+              </b-table>
             </div>
             <div class="row" style="float: right; padding-top: 1%; text-align: right; margin-right: 10%">
               <h6 class="title is-6" style="margin-bottom: 5px">Order Total :  &nbsp;{{ paymentData[0]["@orderTotal"] }} </h6>
@@ -79,6 +78,7 @@
     data () {
       return {
         paymentData: null,
+        totalPayment: null,
         tableData: null,
         radio: 'cod'
       }
@@ -90,15 +90,23 @@
       async order () {
         try {
           let res = await OrderService.order({ cartID: this.$route.params.cartID })
+          console.log(res.data)
           this.tableData = res.data['3'] || res.data[3]
           this.paymentData = res.data['5'] || res.data[5]
+          this.totalPayment = res.data['5'][0]['@orderTotal'] || res.data[5][0]['@orderTotal']
         } catch (error) {
           this.error = error.data.error || error.data
         }
       },
       async payment () {
         try {
-          let res = await OrderService.payment()
+          let res = await OrderService.payment({
+            'rest_id': this.$store.state.rest,
+            'cust_id': this.$store.state.user.user_id,
+            'cart_id': this.$route.params.cartID,
+            'total_amt': this.totalPayment,
+            'paid': 1
+          })
           console.log(res)
         } catch (error) {
           this.error = error.data.error || error.data
@@ -113,7 +121,7 @@
           type: 'is-success',
           onConfirm: () => {
             this.payment()
-            // this.$router.push({ name: 'OrderDetail' })
+            this.$router.push({ name: 'AccountInfo' })
             this.$toast.open('Order Placed')
           }
         })
@@ -127,7 +135,7 @@
           type: 'is-success',
           onConfirm: () => {
             this.payment()
-            // this.$router.push({ name: 'OrderDetail' })
+            this.$router.push({ name: 'AccountInfo' })
             this.$toast.open('Order Placed')
           }
         })

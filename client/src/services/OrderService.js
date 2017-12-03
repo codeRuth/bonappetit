@@ -10,5 +10,8 @@ export default {
   },
   payment (params) {
     return Api().post('/payment', params)
+  },
+  orderDetail (params) {
+    return Api().post('/order-detail', params)
   }
 }

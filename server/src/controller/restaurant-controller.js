@@ -37,6 +37,22 @@ module.exports = {
         }
       }
     )
+  },
+  rest (req, res) {
+    con.query('SELECT rest_id, name, cuisine, rating, address, image FROM RESTAURANT WHERE RESTAURANT.address LIKE (?)',
+        [req.params.location],
+        (error, results) => {
+          console.log(req.params.id)
+          if (error) {
+            console.log(error)
+            console.log(results)
+            res.status(400).send('Rest not found')
+          } else {
+            console.log(results)
+            res.status(200).send(results)
+          }
+        }
+    )
   }
 
 }

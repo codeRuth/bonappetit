@@ -86,8 +86,9 @@
             email: this.email,
             password: this.password,
             address: this.address
-          }).then(
-          this.$router.push('/'))
+          })
+          this.$toast.open('Registered Successfully')
+          this.$router.push({ name: 'Home' })
         } catch (error) {
           this.error = error.data.error || error.data
         }

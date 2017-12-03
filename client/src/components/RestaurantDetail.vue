@@ -23,7 +23,6 @@
             </p>
           </footer>
         </div>
-
       </div>
       <div class="column is-one-half">
         <b-field position="is-left">
@@ -55,9 +54,9 @@
         </b-table>
         <!--{{checkedRows}}-->
       </div>
-
+      <p style="visibility: hidden">{{$store.dispatch('setCart', checkedRows)}}</p>
       <div class="column is-one-third">
-        <cart :data="checkedRows"></cart>
+        <cart :data="$store.state.cart"></cart>
       </div>
 
     </div>
@@ -95,6 +94,8 @@
           let res = await SearchService.detail(this.$route.params.id)
           this.post = res.data
           this.post.forEach(function (v) { v.quantity = 1 })
+          console.log(this.post)
+          this.$store.dispatch('setRest', this.post[0]['rest_id'])
         } catch (error) {
           this.error = error.data.error || error.data
         }

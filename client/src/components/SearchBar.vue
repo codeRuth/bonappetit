@@ -20,7 +20,6 @@
 </template>
 
 <script>
-  import SearchService from '@/services/RestaurantService'
   export default {
     data () {
       return {
@@ -28,16 +27,6 @@
       }
     },
     methods: {
-      async search () {
-        try {
-          await SearchService.search({
-            term: this.term
-          })
-          // .then(this.$router.push('/login-success'))
-        } catch (error) {
-          this.error = error.data.error || error.data
-        }
-      }
     }
   }
 </script>

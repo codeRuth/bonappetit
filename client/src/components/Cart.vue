@@ -4,9 +4,12 @@
       <p class="card-header-title">Cart</p>
       <a href="#" slot="trigger" class="card-header-icon" aria-label="more options"><span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
     </header>
-    <div class="card-content">
+    <div class="card-content" v-if="cartState">
+      <h6 class="title is-5" style="text-align: center">Cart Empty</h6>
+    </div>
+    <div class="card-content" v-else>
       <b-table
-        :data="data"
+        :data=data
         :checked-rows.sync="checkedRows">
 
         <template slot-scope="props">
@@ -19,10 +22,10 @@
               <b-input min="1" type="number" v-model="props.row.quantity"></b-input>
             </b-field>
             <!--<b-field>-->
-              <!--<>-->
-              <!--<span v-on:click="quantity &#45;&#45;" class="icon is-small del"><i class="mdi mdi-minus"></i></span>-->
-              <!--<div v-model="quantity" class="quantity">{{props.row.quantity}}</div>-->
-              <!--<span v-on:click="row.quantity ++" class="icon is-small add"><i class="mdi mdi-plus"></i></span>-->
+            <!--<>-->
+            <!--<span v-on:click="quantity &#45;&#45;" class="icon is-small del"><i class="mdi mdi-minus"></i></span>-->
+            <!--<div v-model="quantity" class="quantity">{{props.row.quantity}}</div>-->
+            <!--<span v-on:click="row.quantity ++" class="icon is-small add"><i class="mdi mdi-plus"></i></span>-->
             <!--</b-field>-->
           </b-table-column>
 
@@ -32,10 +35,9 @@
 
         </template>
       </b-table>
-      <p class="billing">Cart Total : <span class="billing-amt">{{cartTotal}}</span></p>
     </div>
     <footer class="card-footer">
-      <a v-on:click="confirmCustom()" class="card-footer-item is-primary">Checkout</a>
+      <a v-on:click="confirmCustom()" class="card-footer-item is-primary" >Checkout</a>
     </footer>
   </div>
 </template>
@@ -54,14 +56,11 @@
         initTotal: 0
       }
     },
-//    computed: {
-//      cartTotal: function () {
-//        this.data.forEach(function (value) {
-//          console.log(value)
-//        })
-//        return this.cartTotal
-//      }
-//    },
+    computed: {
+      cartState () {
+        return this.$store.state.cart.length === 0
+      }
+    },
     methods: {
       async checkout () {
         try {
@@ -89,17 +88,5 @@
 </script>
 
 <style scoped>
-  .billing {
-    margin-top: 10px;
-    font-weight: bold;
-  }
 
-  .billing-amt {
-    float: right;
-    font-weight: normal;
-  }
-  .quantity {
-    padding-left: 5px;
-    padding-right: 5px;
-  }
 </style>

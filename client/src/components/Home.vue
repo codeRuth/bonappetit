@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <nav-bar></nav-bar>
+
     <div class="header-content" style="padding-top: 40px">
       <section class="hero is-light">
         <div class="hero-body">
@@ -12,10 +13,12 @@
         <search-bar class="search-field" style="padding-bottom: 20px;"></search-bar>
       </section>
     </div>
+
     <section class="container features">
       <div class="columns">
         <div class="column">
-          <div class="card">
+          <router-link :to="{ name: 'Home'}">
+            <div class="card">
             <div class="card-image">
               <figure class="image is-2by1">
                 <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
@@ -30,43 +33,41 @@
               </p>
             </div>
           </div>
+          </router-link>
         </div>
         <div class="column">
-          <div class="card">
+          <router-link :to="{ name: 'Restaurateur'}">
+            <div class="card">
             <div class="card-image">
               <figure class="image is-2by1">
                 <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
               </figure>
             </div>
             <div class="card-content">
-              <p class="title">
-                Restaurateurs
-              </p>
-              <p class="subtitle">
-                Jeff Atwood
-              </p>
+              <p class="title">Restaurateurs</p>
+              <p class="subtitle">Restaurateurs can View, Update Order Status.</p>
             </div>
           </div>
+          </router-link>
         </div>
         <div class="column">
-          <div class="card">
+          <router-link :to="{ name: 'Deliverer'}">
+            <div class="card">
             <div class="card-image">
               <figure class="image is-2by1">
                 <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
               </figure>
             </div>
             <div class="card-content">
-              <p class="title">
-                Deliverer
-              </p>
-              <p class="subtitle">
-                Jeff Atwood
-              </p>
+              <p class="title">Deliverer</p>
+              <p class="subtitle">Deliverer's can View, Deliver Orders from here.</p>
             </div>
           </div>
+          </router-link>
         </div>
       </div>
     </section>
+
   </div>
 </template>
 
@@ -87,5 +88,8 @@
   }
   .features {
     padding-top: 20px;
+  }
+  .card-content {
+    text-align: center;
   }
 </style>

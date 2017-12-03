@@ -1,14 +1,18 @@
 <template>
   <nav class="nav has-shadow">
     <div class="container">
-      <div class="nav-left">
-        <a class="nav-item">
-          <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo">
-        </a>
+      <div class="navbar-brand ">
+        <a class="navbar-item" href="/"><img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox"></a>
       </div>
       <div class="nav-right nav-menu">
         <a class="nav-item is-tab"><span class="icon"><i class="fa fa-github"></i></span></a>
-        <span class="navbar-item">
+        <span class="navbar-item" v-if="loggedIn">
+          <div class="field has-addons">
+            <p class="control"><a class="button is-primary" @click="$router.push({ name: 'AccountInfo' })">My Account</a></p>
+            <p class="control"><a class="button" @click="logout()">Logout</a></p>
+          </div>
+        </span>
+        <span class="navbar-item" v-else>
             <div class="field has-addons">
               <p class="control"><a class="button is-primary" @click="isLoginModalActive = true">Login</a></p>
               <p class="control"><a class="button" @click="isRegisterModalActive = true">Register</a></p>
@@ -34,11 +38,23 @@
       'login-modal': LoginModal,
       'register-modal': RegisterModal
     },
+    computed: {
+      loggedIn () {
+        return this.$store.state.isUserLoggedIn
+      }
+    },
     data () {
       return {
         isLoginModalActive: false,
         isRegisterModalActive: false,
         formProps: null
+      }
+    },
+    methods: {
+      logout () {
+        this.$store.dispatch('setToken', null)
+        this.$store.dispatch('setUser', null)
+        this.$router.push({ name: 'Home' })
       }
     }
   }

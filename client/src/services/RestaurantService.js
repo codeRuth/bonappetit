@@ -7,5 +7,8 @@ export default {
   },
   detail (params) {
     return Api().get('/restaurant/' + params)
+  },
+  restaurants (params) {
+    return Api().get('/restaurants/' + params)
   }
 }
