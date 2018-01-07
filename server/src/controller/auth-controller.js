@@ -4,15 +4,14 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
 function jwtSignUser (user) {
-  // const ONE_WEEK = 60 * 60 * 24 * 7
+  const ONE_WEEK = 60 * 60 * 24 * 7
   return jwt.sign(user, config.auth.jwtSecret, {
-    expiresIn: '10m'
+    expiresIn: ONE_WEEK
   })
 }
 
 const con = mysql.createConnection(config.db)
 con.connect()
-// ^[789]\d{9}$
 
 module.exports = {
   register (req, res) {

@@ -9,7 +9,6 @@ module.exports = (app) => {
   app.post('/register', auth.register)
   app.post('/login', auth.login)
   app.post('/search', restaurant.search)
-  // app.get('/restaurants', restaurant.list)
   app.get('/restaurant/:id', restaurant.detail)
   app.get('/restaurants/:location', restaurant.rest)
   app.post('/checkout', order.checkout)

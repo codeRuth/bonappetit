@@ -1,29 +1,33 @@
-# README #
+#BonAppetit
+####A Web App for a Food Ordering ans Delivery Service
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This a small Web App for a 'Food Ordering and Delivery Service' currently with limited capablities with more functionalities, and building a plug-n-play solution in the future, so 'startups' can readily use the service with zeo setup.  
 
-### What is this repository for? ###
+###Features
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+ - User Management (Login and Registration)
+ - Order Management for Restaurants and Deliverer
+ - Realtime Order Status
+ - Typical Food Ordering, Payment Workflow.
 
-### How do I get set up? ###
+### Powered By
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+ - **VueJS** (Webpack)
+	 - **Axios** for outbound HTTP requests.
+	 - **Vuex** for State Management
+	 - **Buefy** - Vue implemetation of **Bulma** CSS Framework
+	 - **mdi** Material Design Icons
+ - **ExpressJS**
+	 - **mysql** (Node JS Connector for MySQL)
+	 - **jsonwebtoken** 
+ - **MySQL** Database 
+ - **ESLint** for ES6 complaint code
 
-### Contribution guidelines ###
+###Get It Running
+ 1. Make sure NodeJS with NPM is installed.
+ 2. Create a MYSQL database with the schema in **bonAppetit.sql**
+ 3. Edit MySQL credentials in *bonAppetit/server/src/config/config.js*
+ 4. Navigate to each of **server** and **client** directory and **npm install** all the dependencies
+ 5.  After the dependencies have been installed run using **npm run start** in both directories.
 
-* Writing tests
-* Code review
-* Other guidelines
 
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact

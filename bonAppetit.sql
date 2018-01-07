@@ -1,10 +1,6 @@
 CREATE DATABASE IF NOT EXISTS bonAppetit;
 USE bonAppetit;
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
 --
 -- Database: `bonAppetit`
 --
@@ -38,65 +34,6 @@ CREATE TABLE `CART` (
   `quantity` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `CART`
---
-
-INSERT INTO `CART` (`cart_index`, `item_id`, `quantity`) VALUES
-(3599, 233, 1),
-(3599, 234, 1),
-(3599, 235, 1),
-(9506, 231, 1),
-(9506, 232, 1),
-(9506, 233, 1),
-(9506, 234, 1),
-(1442, 29, 5),
-(1442, 73, 1),
-(3145, 231, 1),
-(3145, 232, 1),
-(3145, 234, 1),
-(3145, 235, 1),
-(1987, 4, 1),
-(1987, 73, 1),
-(1987, 94, 1),
-(6735, 232, 1),
-(6735, 234, 1),
-(6735, 235, 1),
-(6735, 236, 1),
-(6735, 237, 1),
-(1682, 73, 6),
-(1682, 94, 5),
-(1682, 229, 4),
-(8710, 260, 1),
-(8710, 259, 1),
-(8710, 258, 1),
-(8710, 263, 1),
-(4617, 231, 1),
-(4617, 232, 3),
-(4617, 234, 10),
-(6863, 73, 1),
-(6863, 29, 1),
-(7243, 258, 1),
-(7243, 259, 3),
-(7243, 262, 3),
-(7243, 263, 1),
-(7243, 264, 3),
-(2295, 4, 4),
-(2295, 73, 2),
-(2295, 94, 1),
-(2295, 229, 5),
-(3072, 232, 4),
-(3072, 234, 3),
-(3072, 237, 2),
-(3072, 238, 1),
-(3072, 247, 4),
-(3072, 246, 2),
-(3072, 249, 1),
-(5972, 258, 1),
-(5972, 259, 1),
-(5972, 262, 1),
-(5972, 263, 1),
-(5972, 265, 1);
 
 -- --------------------------------------------------------
 
@@ -108,26 +45,6 @@ CREATE TABLE `CART_INDEX` (
   `cart_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `CART_INDEX`
---
-
-INSERT INTO `CART_INDEX` (`cart_id`, `user_id`) VALUES
-(1442, 19),
-(1682, 19),
-(1987, 19),
-(2295, 19),
-(3072, 19),
-(3145, 19),
-(3599, 19),
-(4617, 19),
-(5972, 19),
-(6735, 19),
-(6863, 19),
-(7243, 19),
-(8710, 19),
-(9506, 19);
 
 -- --------------------------------------------------------
 
@@ -235,14 +152,6 @@ CREATE TABLE `ORDER` (
   `paid` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `ORDER`
---
-
-INSERT INTO `ORDER` (`order_id`, `rest_id`, `cust_id`, `cart_id`, `del_id`, `total_amt`, `accepted`, `cooked`, `delivered`, `paid`) VALUES
-(39, 115, 21, 2295, 3, 1410, 1, 1, 1, 1),
-(40, 116, 31, 3072, 2, 2435, 1, 1, 1, 1),
-(41, 117, 32, 5972, 2, 620, 1, 1, 1, 1);
 
 --
 -- Triggers `ORDER`
@@ -351,28 +260,7 @@ CREATE TABLE `USER` (
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `USER`
---
 
-INSERT INTO `USER` (`user_id`, `name`, `email`, `password`, `phone`, `address`, `created_at`, `updated_at`) VALUES
-(19, 'Amrutha D', 'amrutha12496@gmail.com', '$2a$10$lbBJ0d.wl/iC7LBZG.6Cju.oIt23a/cTB6WDxx5GO2I3SDBpmAeie', '8792510147', 'Jigani APC', NULL, NULL),
-(21, 'Ruthvik Vijayakumar', 'admin@vtume.ga', '$2a$10$G8TZhomOiGBeeZpSHyRG2uDGKVL43kkbJbYHzsLiJ7ioZ0QuXG0ky', '8970464490', 'Rajajinagar', NULL, NULL),
-(22, 'Sachin BM', 'sachinbn1996@gmail.com', '$2a$10$H8uWfj6ZXx1HuBtDAChO9.NFvn3Q1JL3h25JU9ZHMOALmupugd8PG', '8892841337', 'Basaveshwarnagar', NULL, NULL),
-(24, 'Abhishek Singh', 'abhishek19997@gmail.com', '$2a$10$0rkYuna2tGTG0Qz2iht8k.eBzDskdFdhxt9mJcwHaBbKEcvJpsqmi', '8050014457', 'Kudlu', NULL, NULL),
-(25, 'Ruthvik V', 'coderuth@mail.com', '$2a$10$LYHFwmAAz3aYZQcM4..xXunn4MHfofWSDKtyKaPhUDpa/t5gKTSga', '8660420224', 'Hosa Road', NULL, NULL),
-(26, 'Ruthvik Vijayakumar', 'admin@vtume.gas', '$2a$10$FWQEgXNc4NYfwXUeqfNsWe4NN8YNRltFiJo.Cr6ZMm8yUHF7qWoEO', '8970464491', 'hw', NULL, NULL),
-(27, 'Anitha Kumari', 'anithakumari159@gmail.com', '$2a$10$Rk70uATXu3yIduddj8621.zmkn7bv4NionYy/.xqPDksUZ6RSjv66', '8095986565', 'Industrial Town', NULL, NULL),
-(28, 'Ruthvik V', 'coderuth@outlook.com', '$2a$10$dJzrkmyQD8ARoGyfz4XTruACSqYCu41Kn/vC1a/OC4FvJJ4kaYKFu', '8660420441', 'jimmy', NULL, NULL),
-(29, 'Krishna Sagar', 'krisag@outlook.com', '$2a$10$lCmyBso7zQoGxDHKCM22c.mWGilMlfGmT7pUXsS0fOHIad8M2ISHO', '9980641969', 'Malleshwaram', NULL, NULL),
-(30, 'Shamshirun ', 'shammu@gmail.com', '$2a$10$TyRStn/TS.3eyXbiCkpNLevv33Eml6ev/2orbilaD/f3e/eiQL3zW', '9980641968', 'Rajajinagar', NULL, NULL),
-(31, 'Sharon EM', 'sharon@gmail.com', '$2a$10$CSsTAz44CUijreubkzsCze.BevYuR.2iynBd3X87gXesVVptjKmzi', '8095986560', 'Rajajinagar', NULL, NULL),
-(32, 'Bhumika V', 'bhumi@gamil.com', '$2a$10$eJyBys2ZMgMrlX6T3fDcIuqApbZQhSpi9E18Y6ADdIwfeTzd0Ct7a', '9980641960', 'Rajajinagar', NULL, NULL),
-(33, 'Bhumika V', 'bhumi@gmail.com', '$2a$10$BCgTpjKUiNiPJgLiHon.b.bnoqSPksC9fZV3J.l8xESHjjMwAimO2', '9980641960', 'Rajajinagar', NULL, NULL);
-
---
--- Indexes for dumped tables
---
 
 --
 -- Indexes for table `CART`
