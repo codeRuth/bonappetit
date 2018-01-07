@@ -1,9 +1,10 @@
-#BonAppetit
-####A Web App for a Food Ordering ans Delivery Service
+# BonAppetit
+
+### A Web App for a Food Ordering ans Delivery Service
 
 This a small Web App for a 'Food Ordering and Delivery Service' currently with limited capablities with more functionalities, and building a plug-n-play solution in the future, so 'startups' can readily use the service with zeo setup.  
 
-###Features
+### Features
 
  - User Management (Login and Registration)
  - Order Management for Restaurants and Deliverer
@@ -23,7 +24,7 @@ This a small Web App for a 'Food Ordering and Delivery Service' currently with l
  - **MySQL** Database 
  - **ESLint** for ES6 complaint code
 
-###Get It Running
+### Get It Running
  1. Make sure NodeJS with NPM is installed.
  2. Create a MYSQL database with the schema in **bonAppetit.sql**
  3. Edit MySQL credentials in *bonAppetit/server/src/config/config.js*
