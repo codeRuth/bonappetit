@@ -37,7 +37,7 @@
       </b-table>
     </div>
     <footer class="card-footer">
-      <a v-on:click="confirmCustom()" class="card-footer-item is-primary" >Checkout</a>
+      <a v-on:click="confirmCustom()" class="card-footer-item is-primary">Checkout</a>
     </footer>
   </div>
 </template>
@@ -71,17 +71,29 @@
         }
       },
       confirmCustom () {
-        this.$dialog.confirm({
-          title: 'Place Order',
-          message: 'Are you sure you want to place the Order?, You can\'t change this.',
-          cancelText: 'Cancel',
-          confirmText: 'Order',
-          type: 'is-success',
-          onConfirm: () => {
-            this.checkout()
-            // this.$toast.open('User agreed')
-          }
-        })
+        if (this.$store.state.user == null) {
+          this.$dialog.confirm({
+            message: 'Please Login or Register to Order',
+            cancelText: 'Cancel',
+            confirmText: 'OK',
+            type: 'is-success',
+            onConfirm: () => {
+              this.$router.push({name: 'Home'})
+            }
+          })
+        } else {
+          this.$dialog.confirm({
+            title: 'Place Order',
+            message: 'Are you sure you want to place the Order? You can\'t change this.',
+            cancelText: 'Cancel',
+            confirmText: 'Order',
+            type: 'is-success',
+            onConfirm: () => {
+              this.checkout()
+              // this.$toast.open('User agreed')
+            }
+          })
+        }
       }
     }
   }
