@@ -1,4 +1,4 @@
-const mysql = require('mysql')
+const mysql = require('mysql2')
 const config = require('../config/config')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
@@ -10,6 +10,8 @@ function jwtSignUser (user) {
   })
 }
 
+console.log(config.db)
+
 const con = mysql.createConnection(config.db)
 con.connect()
 
@@ -17,19 +19,19 @@ module.exports = {
   register (req, res) {
     let hash = bcrypt.hashSync(req.body.password, 10)
     con.query('INSERT INTO USER (name, email, password, phone, address) VALUES (?, ?, ?, ?, ?)',
-        [req.body.name, req.body.email, hash, req.body.number, req.body.address],
-        (error, results) => {
-          if (error) {
-            console.log(error)
-            console.log(results)
-            res.status(400).send('Phone Number Already Present.')
-          } else {
-            // console.log(req)
-            console.log('User Created Successfully.')
-            console.log(results)
-            res.status(200).send(results)
-          }
+      [req.body.name, req.body.email, hash, req.body.number, req.body.address],
+      (error, results) => {
+        if (error) {
+          console.log(error)
+          console.log(results)
+          res.status(400).send('Phone Number Already Present.')
+        } else {
+          // console.log(req)
+          console.log('User Created Successfully.')
+          console.log(results)
+          res.status(200).send(results)
         }
+      }
     )
   },
   login (req, res) {

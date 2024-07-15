@@ -3,7 +3,7 @@
     <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
       <div class="container">
         <div class="navbar-brand ">
-          <a class="navbar-item" href="/"><img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox"></a>
+          <a class="navbar-item" style="font-weight: bold; font-size: 22px;" href="/">bonAppetite</a>
         </div>
       </div>
     </nav>
@@ -38,7 +38,7 @@
             <thead>
             <tr>
               <th class="table-content">ID</th>
-              <th class="table-content">Customer Name</th>
+              <th class="table-content">Items</th>
               <th class="table-content">Customer Phone</th>
               <th class="table-content">Amount Due / Paid</th>
               <th class="table-content">Delivery Info.</th>
@@ -51,7 +51,7 @@
             <tbody>
             <tr v-for="item in ordInf[1]">
               <th class="table-content">{{ item.order_id }}</th>
-              <td class="table-content">{{ item.name }}</td>
+              <td class="table-content">{{ ordInf[2].filter(x => x.order_id == item.order_id).map(x => `${x.item_name} (${x.quantity})`).join(", ") }}</td>
               <td class="table-content">{{ item.phone }}</td>
               <td class="table-content">{{ item.total_amt }}</td>
               <td class="table-content">{{ item.del_id }}</td>
@@ -129,7 +129,7 @@
           await OrderDetailService.markAccepted({
             user_id: userID
           })
-          this.orderDetail()
+          await this.orderDetail()
         } catch (error) {
           this.error = error.data.error || error.data
         }
@@ -139,7 +139,7 @@
           await OrderDetailService.markCooked({
             user_id: userID
           })
-          this.orderDetail()
+          await this.orderDetail()
         } catch (error) {
           this.error = error.data.error || error.data
         }

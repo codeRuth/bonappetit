@@ -8,9 +8,9 @@
         <div class="columns">
           <div class="column is-one-quarter">
             <div class="card">
-              <div class="card-image">
-                <figure class="image is-16by3">
-                  <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+              <div class="card-image" style="padding-top:16px; display: flex; width: 100%; justify-content: center; align-items: center">
+                <figure class="image is-128x128">
+                  <img src="../assets/profile.png" alt="Placeholder image" >
                 </figure>
               </div>
               <div class="card-content">
@@ -42,8 +42,8 @@
               </thead>
               <tbody>
               <tr v-for="item in ordInf">
-                <th class="table-content">{{ item.order_id }}</th>
-                <td class="table-content">{{ item.name }}</td>
+                <th class="table-content">{{ item.order_id }} </th>
+                <td class="table-content">{{ item.name }} ({{item.rest_id}})</td>
                 <td class="table-content">{{ item.total_amt }}</td>
                 <td class="table-content">{{ item.del_id }}</td>
 
@@ -137,6 +137,7 @@
             user_id: this.$store.state.user.user_id
           })
           this.ordInf = res.data
+          console.log(res.data)
         } catch (error) {
           this.error = error.data.error || error.data
         }

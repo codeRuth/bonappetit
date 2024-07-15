@@ -2,10 +2,9 @@
   <nav class="nav has-shadow">
     <div class="container">
       <div class="navbar-brand ">
-        <a class="navbar-item" href="/"><img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox"></a>
+        <a class="navbar-item" style="font-weight: bold; font-size: 22px;" href="/">bonAppetite</a>
       </div>
       <div class="nav-right nav-menu">
-        <a class="nav-item is-tab"><span class="icon"><i class="fa fa-github"></i></span></a>
         <span class="navbar-item" v-if="loggedIn">
           <div class="field has-addons">
             <p class="control"><a class="button is-primary" @click="$router.push({ name: 'AccountInfo' })">My Account</a></p>

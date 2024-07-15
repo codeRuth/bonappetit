@@ -64,8 +64,8 @@
     methods: {
       async checkout () {
         try {
-          let res = await OrderService.checkout({ cart: this.data })
-          this.$router.push({ name: 'OrderDetail', params: { 'cartID': res.data.cartID } })
+          let res = await OrderService.checkout({ cart: this.data, user_id: this.$store.state.user.user_id })
+          await this.$router.push({name: 'OrderDetail', params: {'cartID': res.data.cartID}})
         } catch (error) {
           this.error = error.data.error || error.data
         }

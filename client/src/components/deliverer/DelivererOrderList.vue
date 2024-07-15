@@ -3,7 +3,7 @@
     <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
       <div class="container">
         <div class="navbar-brand ">
-          <a class="navbar-item" href="/"><img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox"></a>
+          <a class="navbar-item" style="font-weight: bold; font-size: 22px;" href="/">bonAppetite</a>
         </div>
       </div>
     </nav>
@@ -13,9 +13,9 @@
       <div class="columns">
         <div class="column is-one-quarter">
           <div class="card">
-            <div class="card-image">
-              <figure class="image is-16by3">
-                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+            <div class="card-image" style="padding-top:16px; display: flex; width: 100%; justify-content: center; align-items: center">
+              <figure class="image is-128x128">
+                <img src="../../assets/delivery-bike.png" alt="Placeholder image">
               </figure>
             </div>
             <div class="card-content">

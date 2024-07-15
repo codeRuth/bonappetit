@@ -1,4 +1,4 @@
-const mysql = require('mysql')
+const mysql = require('mysql2')
 const config = require('../config/config')
 
 const con = mysql.createConnection(config.db)
@@ -38,7 +38,7 @@ module.exports = {
     )
   },
   orderDetail: function (req, res) {
-    con.query('SELECT RESTAURANT.name, order_id, cart_id, del_id, total_amt, accepted, cooked, delivered, paid FROM `ORDER`, `RESTAURANT` WHERE cust_id = ? AND RESTAURANT.rest_id = `ORDER`.rest_id;',
+    con.query('SELECT RESTAURANT.name, order_id, ORDER.rest_id, cart_id, del_id, total_amt, accepted, cooked, delivered, paid FROM `ORDER`, `RESTAURANT` WHERE cust_id = ? AND RESTAURANT.rest_id = `ORDER`.rest_id;',
       [req.body.user_id],
       (error, results) => {
         if (error) {
@@ -64,7 +64,7 @@ module.exports = {
       if (err) {
         throw err
       }
-      con.query('INSERT INTO `CART_INDEX` (`cart_id`) VALUES (?)', [cartID], function (error, results, fields) {
+      con.query('INSERT INTO `CART_INDEX` (`cart_id`, `user_id`) VALUES (?, ?)', [cartID, req.body.user_id], function (error, results, fields) {
         if (error) {
           console.log(error)
           return con.rollback(function () {

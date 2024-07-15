@@ -55,10 +55,13 @@
             number: this.number,
             password: this.password
           })
-          this.$store.dispatch('setToken', res.data.token)
-          this.$store.dispatch('setUser', res.data.user)
+          await this.$store.dispatch('setToken', res.data.token)
+          await this.$store.dispatch('setUser', res.data.user)
           this.$toast.open('Logged In')
-          this.$router.push({ name: 'RestaurantGrid', params: { location: this.$store.state.user.address.toLowerCase() } })
+          await this.$router.push({
+            name: 'RestaurantGrid',
+            params: {location: this.$store.state.user.address.toLowerCase()}
+          })
           console.log(res.data.token)
         } catch (error) {
           // this.error = error.data.error || error.data

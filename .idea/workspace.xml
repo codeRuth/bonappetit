@@ -1,19 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0fd0e7e1-e918-4849-b879-fc2a011c714a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bonAppetit.sql" afterPath="$PROJECT_DIR$/bonAppetit.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/config/config.js" afterPath="$PROJECT_DIR$/server/src/config/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/controller/auth-controller.js" afterPath="$PROJECT_DIR$/server/src/controller/auth-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/routes.js" afterPath="$PROJECT_DIR$/server/src/routes.js" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/assets/customer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/assets/delivery-bike.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/assets/profile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/assets/restaurant.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bonAppetit.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bonAppetit.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/AccountInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AccountInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Cart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/LoginModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/LoginModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/RestaurantDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/RestaurantDetail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/SearchBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SearchBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/SearchResults.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SearchResults.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/deliverer/Deliverer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/deliverer/Deliverer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/deliverer/DelivererOrderList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/deliverer/DelivererOrderList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/restaurateur/Restaurateur.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/restaurateur/Restaurateur.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/restaurateur/RestaurateurOrderList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/restaurateur/RestaurateurOrderList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/services/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/Api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/test/e2e/custom-assertions/elementCount.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/test/e2e/nightwatch.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/test/e2e/runner.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/test/e2e/specs/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/test/unit/.eslintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/test/unit/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/test/unit/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/test/unit/specs/Hello.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/config/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controller/auth-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controller/auth-controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controller/order-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controller/order-controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controller/order-detail-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controller/order-detail-controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controller/restaurant-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controller/restaurant-controller.js" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/.tmp/" />
-    <ignored path="$PROJECT_DIR$/temp/" />
-    <ignored path="$PROJECT_DIR$/tmp/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -212,13 +242,6 @@
     <package-json value="$PROJECT_DIR$/server/package.json" />
     <package-json value="$PROJECT_DIR$/client/package.json" />
   </component>
-  <component name="JsFlowSettings">
-    <service-enabled>true</service-enabled>
-    <exe-path />
-    <annotation-enable>false</annotation-enable>
-    <other-services-enabled>true</other-services-enabled>
-    <auto-save>true</auto-save>
-  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
@@ -230,17 +253,24 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/client/node_modules" />
     <handled-path value="$PROJECT_DIR$/node_modules" />
     <handled-path value="$PROJECT_DIR$/server/node_modules" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="148" />
     <option name="y" value="319" />
     <option name="width" value="1129" />
     <option name="height" value="670" />
   </component>
+  <component name="ProjectId" id="2f9wEcHXnNFTrkSMDUMI7PEJUWQ" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>
@@ -294,25 +324,30 @@
       <pane id="Scope" />
     </panes>
   </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="nodejs_interpreter_path" value="/usr/bin/node" />
-    <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/client/README.md&#10;/home/coderuth/bonAppetit/client/src/router/index.js&#10;/home/coderuth/bonAppetit/client/package.json&#10;/home/coderuth/bonAppetit/client/.eslintrc.js&#10;/home/coderuth/bonAppetit/client/src/services/Api.js&#10;/home/coderuth/bonAppetit/client/src/services/AuthenticationService.js" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
-    <property name="JavaScriptPreferStrict" value="false" />
-    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/client/node_modules/eslint" />
-    <property name="node.js.path.for.package.standard" value="project" />
-    <property name="node.js.detected.package.standard" value="true" />
-    <property name="node.js.selected.package.standard" value="$PROJECT_DIR$/client/node_modules/eslint" />
-    <property name="standardjs.codestyle.accepted" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/aravind" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="Vue" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/ruthvikvijayakumar/bonappetit",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "npm.start.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/Users/ruthvikvijayakumar/bonappetit/server/node_modules/prettier",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/src/components/restaurateur" />
@@ -321,24 +356,15 @@
       <recent name="$PROJECT_DIR$/client/src/assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/assets" />
       <recent name="$PROJECT_DIR$/server/src/controller" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="npm.dev">
-    <configuration name="db-demo.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="db-demo.js" working-dir="$PROJECT_DIR$/server/src" />
-    <configuration name="dev" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="npm.start">
+    <configuration name="db-demo.js" type="NodeJSConfigurationType" temporary="true" path-to-js-file="db-demo.js" working-dir="$PROJECT_DIR$/server/src">
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/client/package.json" />
       <command value="run" />
       <scripts>
@@ -346,26 +372,19 @@
       </scripts>
       <node-interpreter value="project" />
       <envs />
+      <method v="2" />
     </configuration>
-    <configuration name="start (1)" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/server/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="$USER_HOME$/.nvm/versions/node/v8.7.0/bin/node" />
-      <envs />
-    </configuration>
-    <configuration name="start (2)" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+    <configuration name="start (2)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/client/package.json" />
       <command value="run" />
       <scripts>
         <script value="start" />
       </scripts>
-      <node-interpreter value="$USER_HOME$/.nvm/versions/node/v9.0.0/bin/node" />
+      <node-interpreter value="$PROJECT_DIR$/../.nvm/versions/node/v9.0.0/bin/node" />
       <envs />
+      <method v="2" />
     </configuration>
-    <configuration name="start" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/server/package.json" />
       <command value="run" />
       <scripts>
@@ -373,36 +392,44 @@
       </scripts>
       <node-interpreter value="project" />
       <envs />
+      <method v="2" />
     </configuration>
-    <configuration name="start" type="js.build_tools.npm" factoryName="npm" temporary="true">
+    <configuration name="start" type="js.build_tools.npm" temporary="true">
       <package-json value="$PROJECT_DIR$/client/package.json" />
       <command value="run" />
       <scripts>
         <script value="start" />
       </scripts>
-      <node-interpreter value="$USER_HOME$/.nvm/versions/node/v8.7.0/bin/node" />
+      <node-interpreter value="$PROJECT_DIR$/../.nvm/versions/node/v18.20.2/bin/node" />
       <envs />
+      <method v="2" />
     </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="npm.dev" />
-      <item index="1" class="java.lang.String" itemvalue="npm.start" />
-      <item index="2" class="java.lang.String" itemvalue="Node.js.db-demo.js" />
-      <item index="3" class="java.lang.String" itemvalue="npm.start (1)" />
-      <item index="4" class="java.lang.String" itemvalue="npm.start (2)" />
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/server/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Node.js.db-demo.js" />
+      <item itemvalue="npm.dev" />
+      <item itemvalue="npm.start" />
+      <item itemvalue="npm.start (2)" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="npm.start" />
-        <item index="1" class="java.lang.String" itemvalue="npm.dev" />
-        <item index="2" class="java.lang.String" itemvalue="npm.start (2)" />
-        <item index="3" class="java.lang.String" itemvalue="npm.start (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Node.js.db-demo.js" />
+      <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.start (2)" />
+        <item itemvalue="Node.js.db-demo.js" />
       </list>
     </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="0fd0e7e1-e918-4849-b879-fc2a011c714a" name="Default" comment="" />
@@ -463,6 +490,11 @@
       <workItem from="1515145253062" duration="877000" />
       <workItem from="1515170413169" duration="4398000" />
       <workItem from="1515312082380" duration="317000" />
+      <workItem from="1713226492384" duration="4006000" />
+      <workItem from="1713722497496" duration="4323000" />
+      <workItem from="1713809973021" duration="10138000" />
+      <workItem from="1714093828576" duration="111000" />
+      <workItem from="1714438355697" duration="3888000" />
     </task>
     <task id="LOCAL-00001" summary="search capabilities added">
       <created>1510541895659</created>
@@ -587,10 +619,7 @@
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="search capabilities added" />
@@ -602,12 +631,6 @@
     <MESSAGE value="v 1.0 ready" />
     <MESSAGE value="database schema updated" />
     <option name="LAST_COMMIT_MESSAGE" value="database schema updated" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="4" />
-    </breakpoint-manager>
-    <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/server/node_modules/express/lib/router/route.js" />

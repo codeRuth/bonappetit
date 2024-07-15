@@ -2,10 +2,9 @@
   <div>
   <nav-bar></nav-bar>
   <div class="container">
-    <!--<p>{{ $route.query.q }}</p>-->
     <section>
       <h3 class="title is-3">Search Results for '{{$route.query.q}}'</h3>
-      <h5 class="subtitle is-5">{{post.length}} Retaurants found</h5>
+      <h5 class="subtitle is-5">{{post.length}} Restaurants found</h5>
       <div class="loading" v-if="loading">Loading...</div>
       <div v-if="error" class="error">{{ error }}</div>
       <div class="columns is-multiline is-half-mobile is-one-third-tablet is-one-quarter-desktop">

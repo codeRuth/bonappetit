@@ -6,8 +6,8 @@
       <section class="hero is-light">
         <div class="hero-body">
           <div class="container has-text-centered">
-            <h1 class="title is-1" style="padding-bottom: 10px">Order from Restaurants near You.</h1>
-            <h5 class="subtitle is-5">Start ordering by searching food by Location, Restaurant or Item itself.</h5>
+            <h1 class="title is-3" style="padding-bottom: 10px">Order from Restaurants near You.</h1>
+            <h5 class="subtitle is-6">Start ordering by searching food by Location, Restaurant or Item itself.</h5>
           </div>
         </div>
         <search-bar class="search-field" style="padding-bottom: 20px;"></search-bar>
@@ -19,16 +19,16 @@
         <div class="column">
           <router-link :to="{ name: 'Home'}">
             <div class="card">
-            <div class="card-image">
-              <figure class="image is-2by1">
-                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+              <div class="card-image" style="display: flex; justify-content: center">
+                <figure class="image" style="height: 128px; width: 128px;">
+                <img src="../assets/customer.png" alt="Placeholder image">
               </figure>
             </div>
             <div class="card-content">
-              <p class="title">
+              <p class="is-size-4" style="font-weight: bold">
                 Customers
               </p>
-              <p class="subtitle">
+              <p class="is-size-6">
                 Customers use the above login button to Order.
               </p>
             </div>
@@ -38,14 +38,14 @@
         <div class="column">
           <router-link :to="{ name: 'Restaurateur'}">
             <div class="card">
-            <div class="card-image">
-              <figure class="image is-2by1">
-                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+            <div class="card-image" style="display: flex; justify-content: center">
+              <figure class="image" style="height: 128px; width: 128px;">
+                <img src="../assets/restaurant.png" alt="Placeholder image">
               </figure>
             </div>
             <div class="card-content">
-              <p class="title">Restaurateurs</p>
-              <p class="subtitle">Restaurateurs can View, Update Order Status.</p>
+              <p class="is-size-4" style="font-weight: bold">Restaurateurs</p>
+              <p class="is-size-6">Restaurateurs can View, Update Order Status.</p>
             </div>
           </div>
           </router-link>
@@ -53,14 +53,14 @@
         <div class="column">
           <router-link :to="{ name: 'Deliverer'}">
             <div class="card">
-            <div class="card-image">
-              <figure class="image is-2by1">
-                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+              <div class="card-image" style="display: flex; justify-content: center">
+                <figure class="image" style="height: 128px; width: 128px;">
+                <img src="../assets/delivery-bike.png" alt="Placeholder image">
               </figure>
             </div>
             <div class="card-content">
-              <p class="title">Deliverer</p>
-              <p class="subtitle">Deliverer's can View, Deliver Orders from here.</p>
+              <p class="is-size-4" style="font-weight: bold">Deliverer</p>
+              <p class="is-size-6">Deliverer's can View, Deliver Orders from here.</p>
             </div>
           </div>
           </router-link>
